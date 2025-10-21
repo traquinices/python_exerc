@@ -281,6 +281,7 @@ for amount in [5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1]:
 """
 
 #exer28
+"""
 print("Padrão matematico todo XPTO\n")
 
 num = ""
@@ -290,6 +291,8 @@ for i in range(1, 10):
     result = int(num) * 8 + i
 
     print(num, "x 8 +" ,i ,"=" ,result)
+"""
+
 
 
 #func how to do it
