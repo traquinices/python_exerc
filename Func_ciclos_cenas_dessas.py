@@ -91,6 +91,7 @@ print(dublicar(100, 0.03))
 """
 
 #exer36
+"""
 from math import sqrt
 
 def primo(num):
@@ -108,4 +109,6 @@ def primo(num):
 
 print(primo(5))
 print(primo(6))
+"""
 
+#exec37
