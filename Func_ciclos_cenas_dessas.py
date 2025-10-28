@@ -242,4 +242,52 @@ def decodifica(string):
 print(decodifica('acebfd'))
 """
 
-#57 e 58
+#ex 57
+"""
+def seq_racaman(n):
+    res = []
+    
+    for i in range(n): 
+        if i == 0:
+            res += [0]
+            continue
+        last_item = res[i - 1]
+        if last_item > i and last_item - i not in res:
+            res += [last_item - i]
+        else:
+            res += [last_item + i]    
+    return res
+
+# EXEMPLO DE EXECUÇÃO PASSO A PASSO:
+# i = 0: res = [0]
+# i = 1: last_item = 0, 0 > 1? Não → 0 + 1 = 1 → [0, 1]
+# i = 2: last_item = 1, 1 > 2? Não → 1 + 2 = 3 → [0, 1, 3]
+# i = 3: last_item = 3, 3 > 3? Não → 3 + 3 = 6 → [0, 1, 3, 6]
+# i = 4: last_item = 6, 6 > 4? Sim e 6-4=2 não está em res → 6-4=2 → [0, 1, 3, 6, 2]
+
+print(seq_racaman(15))
+"""
+#ex 58
+from random import random
+ 
+
+def random_to(n):
+    # o round vai arredondar o numero random
+    return round(random() * n)
+
+def euromilhoes():
+    list1 = []
+    while len(list1) < 5:
+        r = random_to(50)
+        #se o numero anterior nao tiver na lista ele acrescenta
+        if r not in list1:
+            list1 += [r]
+    list2 = []
+    while len(list2) < 2:
+        r = random_to(12)
+        if r not in list2:
+            list2 += [r]        
+    return [list1, list2]
+    
+print(euromilhoes())
+
