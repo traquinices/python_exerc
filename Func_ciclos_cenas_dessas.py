@@ -112,3 +112,134 @@ print(primo(6))
 """
 
 #exec37
+"""
+
+from math import sqrt
+
+def primo(num):
+    if (num <= 1):
+        return False
+    i = 2
+    raizNum = sqrt(num)
+    
+    while i <= raizNum:
+        if num % i == 0:
+            return False
+        i += 1
+
+    return True 
+
+def n_esimo_primo(n):
+    i = 0
+    num = 1
+    while i < n:
+        if primo(num):
+            i += 1
+        num += 1
+    return num - 1
+print(primo(5))
+print(primo(6))
+"""
+#ex38
+"""
+
+from math import floor
+
+#h = dia da semana
+#q = dia do mes
+#m = mes (1/2/3... /12)
+#K = ano do seculo (ano mod 100)
+#J é o seculo
+
+def dia_da_semana(day, month, year):
+
+    h = exc_formula(day, month, year % 100, floor(year / 100))
+    return weekday_to_string(h)
+
+
+def exc_formula(q, m, K, J):
+    return (q + floor(13 * (m + 1) / 5) + K + floor(K/4) + floor(J / 4) - 2 * J) % 7 
+
+def weekday_to_string(weekday):
+    if (weekday == 0):
+        return "Sabado"
+    if (weekday == 1):
+        return "Domingo"
+    if (weekday == 2):
+        return "Segunda"
+    if (weekday == 3):
+        return "Terça"
+    if (weekday == 4):
+        return "Quarta"
+    if (weekday == 5):
+        return "Quinta"
+    if (weekday == 6):
+        return "Sexta"
+    raise ValueError("Ta mal brother (invalid weekday)")
+
+print(dia_da_semana(28, 10, 2025))
+    
+"""
+
+#ex39
+
+"""
+def misterio(n):
+    ni = invertNumber(n)
+    ns = abs(n - ni)
+    if ns < 100:
+        return "Condições não verificadas"
+    nsi = invertNumber(ns)
+    return ns + nsi
+
+def invertNumber(num):
+    newNum = 0
+    while num > 0:
+        newNum = newNum * 10 + num % 10
+        num //= 10
+    return newNum
+
+print(misterio(246))    
+
+"""
+
+#ex40
+"""
+soma = 0
+
+for i in range(20, 0, -2):
+    soma += 1
+
+print('Soma =', soma)
+"""
+
+#ex49
+"""
+from math import ceil
+
+def codifica(string):
+    str1 = ''
+    str2 = ''
+
+    for i in range (0 , len(string)):
+            if i % 2 == 0:
+                  str1 += string[i]
+            else:
+                  str2 += string[i]
+    return str1 + str2
+
+def decodifica(string):
+    result = ''
+    middle = ceil(len(string) / 2)
+
+    for i in range (middle):
+          result += string[i]
+          if i + middle < len(string):
+                result += string[i + middle]
+    return result
+      
+
+print(decodifica('acebfd'))
+"""
+
+#57 e 58
